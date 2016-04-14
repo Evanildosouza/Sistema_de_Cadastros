@@ -1,0 +1,54 @@
+
+<div class="ui segment container" ng-repeat="cadastro in cadastroDetalhes">
+	<div class="ui form-custom">
+		<h3 class="ui dividing header dividing-header-custom">Editar cadastro - {{cadastro.nome + ' ' + cadastro.sobrenome}}</h3>
+
+		<form name="EditarCadastroForm" class="ui form form-custom" action="" method="post">
+			<div class="field">
+				<div class="two fields text-align-left">
+					<div class="field">
+						<input type="text" ng-model="cadastro.nome" value="{{cadastro.nome}}" name="nome" placeholder="Nome" ng-required="true" />
+						<div ng-show="EditarCadastroForm.nome.$invalid && EditarCadastroForm.nome.$dirty" class="ui red basic pointing label">
+							O nome não pode ficar em branco. Por favor, preencha o nome.
+						</div>
+					</div>
+					<div class="field">
+						<input type="text" ng-model="cadastro.sobrenome" value="{{cadastro.sobrenome}}" name="sobrenome" placeholder="Sobrenome" ng-required="true" />
+						<div ng-show="EditarCadastroForm.sobrenome.$invalid && EditarCadastroForm.sobrenome.$dirty" class="ui red basic pointing label">
+							Por favor, preencha o sobrenome.
+						</div>
+					</div>
+				</div>
+				<div class="field text-align-left">
+					<input type="text" ng-model="cadastro.usuario" value="{{cadastro.usuario}}" name="usuario" placeholder="Úsuario" ng-required="true" />
+					<div ng-show="EditarCadastroForm.usuario.$invalid && EditarCadastroForm.usuario.$dirty" class="ui red basic pointing label">
+						Por favor, preencha o usuário.
+					</div>
+				</div>
+				<div class="field text-align-left">
+					<input type="password" ng-model="cadastro.senha" value="{{cadastro.senha}}" name="senha" placeholder="Senha" ng-required="true" ng-minlength="6" />
+					<div ng-show="EditarCadastroForm.senha.$error.required && EditarCadastroForm.senha.$dirty" class="ui red basic pointing label">
+						Por favor, digite uma senha válida.
+					</div>
+					<div ng-show="EditarCadastroForm.senha.$error.minlength" class="ui red basic pointing label">
+						A senha deve ter, no mínimo, 6 caracteres.
+					</div>
+				</div>
+				<div class="ui container container-table">
+					<button class="ui left floated blue button" ng-click="atualizarCadastro(cadastro)" ng-disabled="EditarCadastroForm.$invalid || isUnchanged(cadastro)">
+						<i class="level up icon"></i>
+						Atualizar Cadastro
+					</button>
+					<a class="ui left floated gray button" href="#/">
+						<i class="remove icon"></i>
+						Cancelar
+					</a>
+					<button class="ui right floated red button" ng-click="apagarCadastro(cadastro)">
+						<i class="trash icon"></i>
+						Apagar cadastro
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

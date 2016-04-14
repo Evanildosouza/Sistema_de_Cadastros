@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/DashboardCtrl.js"></script>
+    <script src="app/controllers/NovoCadastroCtrl.js"></script>
+    <script src="app/controllers/EditarCadastroCtrl.js"></script>
+    <title>Sistema</title>
+
+  </head>
+  <!-- <body class="base ui centered grid container"> -->
+
+  <body>
+
+    <header class="base ui center aligned grid">
+      <i class="ui sitemap huge inverted icon"></i>
+      <h1 class="ui middle aligned">Sistema</h1>
+    </header>
+
+    <div class="ui container">
+      
+      <div class="ui centered grid">
+
+        <div ng-view></div>
+        
+      </div>
+
+    </div>  
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "system",
+  "authors": [
+    "Evanildosouza <evanildo.souza@outlook.com>"
+  ],
+  "description": "Sistema de login e cadastro single page com AngularJS",
+  "main": "app/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Sistema",
+    "de",
+    "login",
+    "e",
+    "cadastro"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}

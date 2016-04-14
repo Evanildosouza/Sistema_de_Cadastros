@@ -1,0 +1,50 @@
+<div class="ui segment container">
+	<h3 class="ui dividing header dividing-header-custom">Lista de Cadastros</h3>
+
+	<div class="ui search right aligned container">
+		<div class="ui icon input">
+			<input class="prompt campo-de-busca" type="text" ng-model="campoDeBusca" placeholder="O que você está buscando?" />
+			<i class="search icon"></i>
+		</div>
+	</div>
+
+	<table class="ui blue table striped padded center aligned">
+		<thead>
+			<tr>
+				<th><a href="" ng-click="ordenarPor('id')">ID</a></th>
+				<th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+				<th><a href="" ng-click="ordenarPor('sobrenome')">Sobrenome</a></th>
+				<th><a href="" ng-click="ordenarPor('usuario')">Usuário</a></th>
+				<th><a href="" ng-click="ordenarPor('cadastrado')">Cadastrado em</a></th>
+				<th><a href="" ng-click="ordenarPor('atualizado')">Última atualização em</a></th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="cadastro in cadastros | filter:{nome: campoDeBusca} | orderBy: criterioDaOrdem:direcaoDaOrdem">
+				<td>{{cadastro.id}}</td>
+				<td>{{cadastro.nome}}</td>
+				<td>{{cadastro.sobrenome}}</td>
+				<td>{{cadastro.usuario}}</td>
+				<td>{{cadastro.cadastrado}}</td>
+				<td>{{cadastro.atualizado}}</td>
+				<td>
+					<a title="Editar" href="#/editar_cadastro/{{cadastro.id}}" class="ui icon button">
+						<i class="edit icon"></i>
+					</a>
+					<a title="Apagar" ng-click="apagarCadastroDashboard(cadastro)" class="ui icon button">
+						<i class="trash icon"></i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="ui container container-table">
+		<a class="ui right floated blue button" href="#/novo_cadastro">
+			<i class="add user icon"></i>
+			Novo Cadastro
+		</a>
+	</div>
+
+</div>

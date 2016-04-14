@@ -1,0 +1,48 @@
+
+<div class="ui segment container">
+	<div class="ui form-custom">
+		<h3 class="ui dividing header dividing-header-custom">Novo cadastro</h3>
+
+		<form name="NovoCadastroForm" id="Novo-Cadastro-Form" class="ui form form-custom" action="" method="post">
+			<div class="field">
+				<div class="two fields text-align-left">
+					<div class="field">
+						<input type="text" ng-model="cadastrarNovo.nome" name="nome" placeholder="Nome" ng-required="true"/>
+						<div ng-show="NovoCadastroForm.nome.$invalid && NovoCadastroForm.nome.$dirty" class="ui red basic pointing label">
+							Por favor, preencha o nome.
+						</div>
+					</div>
+					<div class="field">
+						<input type="text" ng-model="cadastrarNovo.sobrenome" name="sobrenome" placeholder="Sobrenome" ng-required="true" />
+						<div ng-show="NovoCadastroForm.sobrenome.$invalid && NovoCadastroForm.sobrenome.$dirty" class="ui red basic pointing label">
+							Por favor, preencha o sobrenome.
+						</div>
+					</div>
+				</div>
+				<div class="field text-align-left">
+					<input type="text" ng-model="cadastrarNovo.usuario" name="usuario" placeholder="Úsuario" ng-required="true" />
+					<div ng-show="NovoCadastroForm.usuario.$invalid && NovoCadastroForm.usuario.$dirty" class="ui red basic pointing label">
+						Por favor, preencha o usuário.
+					</div>
+				</div>
+				<div class="field text-align-left">
+					<input type="password" ng-model="cadastrarNovo.senha" name="senha" placeholder="Senha" ng-required="true" ng-minlength="6" />
+					<div ng-show="NovoCadastroForm.senha.$error.required && NovoCadastroForm.senha.$dirty" class="ui red basic pointing label">
+						Por favor, digite uma senha válida.
+					</div>
+					<div ng-show="NovoCadastroForm.senha.$error.minlength" class="ui red basic pointing label">
+						A senha deve ter, no mínimo, 6 caracteres.
+					</div>
+				</div>
+				<button class="ui blue button" ng-click="adicionarCadastro(cadastrarNovo)" ng-disabled="NovoCadastroForm.$invalid" type="submit">
+					<i class="add user icon"></i>
+					Cadastrar
+				</button>
+				<a class="ui gray button" href="#/" class="btn">
+					<i class="remove icon"></i>
+					Cancelar
+				</a>
+			</div>
+		</form>
+	</div>
+</div>
